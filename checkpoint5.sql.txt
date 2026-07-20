@@ -1,0 +1,56 @@
+-- 1. ROW_NUMBER və DENSE_RANK ilə Kateqoriya daxilində qiymət dərəcələnməsi
+
+
+SELECT 
+    p.ProductID,
+    p.ProductName,
+    c.CategoryName,
+    p.UnitPrice,
+    ROW_NUMBER() OVER(PARTITION BY p.CategoryID ORDER BY p.UnitPrice DESC) AS PriceRowNumber,
+    DENSE_RANK() OVER(PARTITION BY p.CategoryID ORDER BY p.UnitPrice DESC) AS PriceRank
+FROM Products p
+JOIN Categories c ON p.CategoryID = c.CategoryID;
+
+
+-- 2. SUM() OVER ilə Artan Yekun Gəlir (Running Total)
+
+
+WITH OrderTotals AS (
+    SELECT 
+        o.OrderID,
+        o.OrderDate,
+        ROUND(SUM(od.UnitPrice * od.Quantity * (1 - od.Discount)), 2) AS OrderAmount
+    FROM Orders o
+    JOIN [Order Details] od ON o.OrderID = od.OrderID
+    GROUP BY o.OrderID, o.OrderDate
+)
+SELECT 
+    OrderID,
+    OrderDate,
+    OrderAmount,
+    ROUND(SUM(OrderAmount) OVER(ORDER BY OrderDate, OrderID), 2) AS RunningTotal
+FROM OrderTotals
+LIMIT 15;
+
+
+-- 3. DENSE_RANK + CTE ilə Hər Müştərinin Ən Baha 2 Sifarişi
+
+
+WITH RankedCustomerOrders AS (
+    SELECT 
+        o.CustomerID,
+        o.OrderID,
+        ROUND(SUM(od.UnitPrice * od.Quantity * (1 - od.Discount)), 2) AS OrderTotal,
+        DENSE_RANK() OVER(PARTITION BY o.CustomerID ORDER BY SUM(od.UnitPrice * od.Quantity * (1 - od.Discount)) DESC) AS OrderRank
+    FROM Orders o
+    JOIN [Order Details] od ON o.OrderID = od.OrderID
+    GROUP BY o.CustomerID, o.OrderID
+)
+SELECT 
+    CustomerID,
+    OrderID,
+    OrderTotal,
+    OrderRank
+FROM RankedCustomerOrders
+WHERE OrderRank <= 2
+ORDER BY CustomerID, OrderRank;
