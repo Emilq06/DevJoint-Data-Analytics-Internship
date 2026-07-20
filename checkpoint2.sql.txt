@@ -1,0 +1,37 @@
+-- 1. INNER JOIN (Orders, Employees, Shippers)
+-- Sifarişləri, kuryer şirkətlərini və sifarişi qəbul edən işçiləri birləşdirir
+
+SELECT
+o.OrderID,
+e.FirstName || ' ' || e.LastName As EmployeeName,
+s.CompanyName As ShipperName,
+o.OrderDate
+FROM Orders o
+INNER JOIN Employees e On o.EmployeeID = e.EmployeeID
+INNER JOIN Shippers s On o.ShipVia = s.ShipperID
+LIMIT 10;
+
+-- 2. LEFT JOIN (Order Details, Orders, Products)
+-- Sifariş detallarını məhsul və sifariş məlumatları ilə bağlayır
+
+SELECT 
+    od.OrderID,
+    p.ProductName,
+    od.UnitPrice,
+    od.Quantity,
+    o.OrderDate
+FROM [Order Details] od
+LEFT JOIN Orders o ON od.OrderID = o.OrderID
+LEFT JOIN Products p ON od.ProductID = p.ProductID
+LIMIT 10;
+
+-- 3. Self-Join (Employees)
+-- İşçiləri öz rəhbərləri (menecerləri) ilə eşləşdirir
+
+SELECT 
+    e.EmployeeID,
+    e.FirstName || ' ' || e.LastName AS EmployeeName,
+    e.Title AS Position,
+    m.FirstName || ' ' || m.LastName AS ManagerName
+FROM Employees e
+LEFT JOIN Employees m ON e.ReportsTo = m.EmployeeID;
