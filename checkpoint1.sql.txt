@@ -1,0 +1,19 @@
+-- 1. Bütün məlumatların seçilməsi
+SELECT * FROM Employees;
+
+-- 2. WHERE ilə filtrləmə
+SELECT * FROM Employees
+WHERE Extension > 3457;
+
+-- 3. LIKE ilə mətn axtarışı
+SELECT * FROM Employees
+WHERE FirstName LIKE 'M%';
+
+-- 4. ORDER BY ilə sıralama
+SELECT * FROM Employees
+ORDER BY BirthDate DESC;
+
+-- 5. LIMIT ilə ilk 5 nəticə
+SELECT * FROM Employees
+ORDER BY BirthDate DESC
+LIMIT 3;
