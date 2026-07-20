@@ -1,0 +1,36 @@
+-- 1. Top 5 Müştəri (Gəlirə görə)
+
+SELECT 
+    c.CustomerID,
+    c.CompanyName,
+    ROUND(SUM(od.UnitPrice * od.Quantity * (1 - od.Discount)), 2) AS TotalSpent
+FROM Customers c
+JOIN Orders o ON c.CustomerID = o.CustomerID
+JOIN [Order Details] od ON o.OrderID = od.OrderID
+GROUP BY c.CustomerID, c.CompanyName
+ORDER BY TotalSpent DESC
+LIMIT 5;
+
+-- 2. Orta qiyməti 30-dan yuxarı olan kateqoriyalar
+
+SELECT 
+    cat.CategoryName,
+    COUNT(p.ProductID) AS TotalProducts,
+    ROUND(AVG(p.UnitPrice), 2) AS AvgUnitPrice
+FROM Categories cat
+JOIN Products p ON cat.CategoryID = p.CategoryID
+GROUP BY cat.CategoryID, cat.CategoryName
+HAVING AVG(p.UnitPrice) > 30
+ORDER BY AvgUnitPrice DESC;
+
+-- 3. Aylıq satışlar və NULL region yoxlaması
+
+SELECT 
+    strftime('%Y-%m', OrderDate) AS YearMonth,
+    COUNT(*) AS TotalOrders,
+    COUNT(ShipRegion) AS OrdersWithRegion
+FROM Orders
+GROUP BY YearMonth
+HAVING YearMonth IS NOT NULL
+ORDER BY YearMonth DESC
+LIMIT 10;
