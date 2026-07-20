@@ -1,0 +1,35 @@
+-- 1. Səmərəsiz Correlated Subquery Nümunəsi (Hər sətir üçün təkrar icra olunur):
+
+
+SELECT 
+    o.OrderID,
+    o.CustomerID,
+    (SELECT SUM(od.UnitPrice * od.Quantity) 
+     FROM [Order Details] od 
+     WHERE od.OrderID = o.OrderID) AS TotalAmount
+FROM Orders o;
+
+
+-- 2. Optimallaşdırılmış Sorğu (JOIN və GROUP BY ilə tək keçiddə hesablama):
+
+
+SELECT 
+    o.OrderID,
+    o.CustomerID,
+    SUM(od.UnitPrice * od.Quantity * (1 - od.Discount)) AS TotalAmount
+FROM Orders o
+JOIN [Order Details] od ON o.OrderID = od.OrderID
+GROUP BY o.OrderID, o.CustomerID;
+
+
+-- 3. İndekslərin (Index) Tətbiqi (Full Table Scan-in qarşısını almaq və axtarışı sürətləndirmək üçün):
+
+-- Orders cədvəlində tarix üzrə axtarışları sürətləndirmək üçün index
+
+CREATE INDEX IF NOT EXISTS idx_orders_orderdate 
+ON Orders(OrderDate);
+
+-- Order Details cədvəlində ProductID üzrə JOIN əməliyyatlarını sürətləndirmək üçün index
+
+CREATE INDEX IF NOT EXISTS idx_orderdetails_productid 
+ON [Order Details](ProductID);
