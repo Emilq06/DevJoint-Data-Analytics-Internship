@@ -76,5 +76,26 @@ Conditional Formatting: Summary vərəqində mənfəət hədəfini (Target: 50,0
 
 📁 Repozitoriyanın Strukturu
 Plaintext
-├── Superstore_Analysis_Project.xlsx   # Xam məlumatlar, təmizlənmiş vərəqlər, xülasə və dashboard-u ehtiva edən əsas Excel faylı
+├── superstore_raw_data (1).xlsx   # Xam məlumatlar, təmizlənmiş vərəqlər, xülasə və dashboard-u ehtiva edən əsas Excel faylı
 └── README.md                          # Layihə icmalı, iş axını və formulaların izahlı sənədləşdirilməsi
+
+
+## 📊 Checkpoint-lər üzrə Görülən İşlər
+
+- **Checkpoint 1 — Məlumatların Təmizlənməsi və Standartlaşdırılması:** 
+  `TRIM` və `PROPER` formulaları ilə mətnlərdəki artıq boşluqlar silindi, baş hərflər böyüdüldü və məlumatlar standart formata gətirildi.
+
+- **Checkpoint 2 — Məlumatların Zənginləşdirilməsi (Calculated Fields):** 
+  `XLOOKUP` ilə Regionlar üzrə menecer adları çəkildi, `IFS` ilə mənfəətlilik statusu (`Profit`, `Loss`, `Break Even`) və `IF` ilə sifariş dəyəri (`High Value`, `Standard`) təyin edildi.
+
+- **Checkpoint 3 — Pivot Tables və Məlumatların Qruplaşdırılması:** 
+  Məlumat bazası üzərində Pivot cədvəllər qurularaq Regionlar və Kateqoriyalar üzrə Satış və Mənfəət göstəriciləri dinamik aqreqasiya olundu.
+
+- **Checkpoint 4 — KPI və Şərti Cəmləmə (Summary vərəqi):** 
+  `SUMIFS` və `COUNTIFS` formulaları vasitəsilə Regionlar üzrə mənfəət göstəriciləri, East regionunun satışı və High Value mənfəətli sifarişlərin sayı hesablandı.
+
+- **Checkpoint 5 — Dashboard və Vizuallaşdırma:** 
+  `Summary` vərəqində 3 fərqli qrafik tipi (Column, Line, Pie chart) quruldu və Mənfəət Hədəfini (Target: 50,000) göstərmək üçün Şərti Formatlaşdırma (`>50k` yaşıl, `<50k` qırmızı) tətbiq edildi.
+
+- **Checkpoint 6 — Formulaların Sənədləşdirilməsi:** 
+  Layihə boyunca tətbiq edilən bütün Excel formulalarının sintaksisi, məntiqi və təyinatı ətraflı şəkildə sənədləşdirildi.
