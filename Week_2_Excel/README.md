@@ -76,7 +76,7 @@ Conditional Formatting: Summary vərəqində mənfəət hədəfini (Target: 50,0
 
 📁 Repozitoriyanın Strukturu
 Plaintext
-├── superstore_raw_data (1).xlsx   # Xam məlumatlar, təmizlənmiş vərəqlər, xülasə və dashboard-u ehtiva edən əsas Excel faylı
+├── superstore_raw_data.xlsx   # Xam məlumatlar, təmizlənmiş vərəqlər, xülasə və dashboard-u ehtiva edən əsas Excel faylı
 └── README.md                          # Layihə icmalı, iş axını və formulaların izahlı sənədləşdirilməsi
 
 
