@@ -4,9 +4,9 @@ Bu repository DevJoint proqramı çərçivəsində yerinə yetirilmiş praktiki 
 📁 Repository Strukturu
 Week_01_SQL/ — Həftə 1: SQL Əsaslardan Qabaqcıl (Northwind DB)
 
-.sql faylları — 6 Checkpoint üzrə yazılmış SQL sorğuları
+.sql.txt faylları — 6 Checkpoint üzrə yazılmış SQL sorğuları
 
-Screenshots/ — İcra olunmuş sorğuların nəticə görüntüləri
+.png — İcra olunmuş sorğuların nəticə görüntüləri
 
 README.md — SQL layihəsinin ətraflı sənədləşdirilməsi
 
