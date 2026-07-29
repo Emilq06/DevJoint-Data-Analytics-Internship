@@ -16,7 +16,7 @@ Bu repository **DevJoint SQL Internship** proqramı çərçivəsində **Northwin
 
 ---
 
-## 🛠 İstifade Olunan Texnologiyalar
+## 🛠 İstifadə Olunan Texnologiyalar
 
 * **Database Engine:** SQLite (Northwind Database)
 * **GUI Tool:** DB Browser for SQLite
