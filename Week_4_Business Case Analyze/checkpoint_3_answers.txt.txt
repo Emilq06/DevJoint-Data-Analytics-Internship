@@ -1,3 +1,0 @@
-Checkpoint 3 — Pivot Cədvəli və Hesablamalar (Data Transformation)
-
-Google Sheets-də verilənlər əsasında Pivot Cədvəli yaradılmışdır. Hər bir kanal və il (2024 vs 2025) üzrə Sessions, Orders və Revenue göstəriciləri qruplaşdırılmış, hesablanmış sahə (Calculated Field / Formula) vasitəsilə Conversion Rate (%) (Orders / Sessions) və ROAS dəyərləri hesablanmışdır.
