@@ -1,5 +1,0 @@
-Checkpoint 6 — Konkret Əməli Tövsiyə (Actionable Recommendation)
-
-Tövsiyə: Paid Social kanalının büdcəsinin 15–20%-ni Organic Search və Email kanallarının inkişafına köçürmək lazımdır.
-
-Sübut/Əsaslandırma: Paid Social kanalının konversiya dərəcəsi (~3.18%) Organic Search (~8.57%) və Email (~6.76%) ilə müqayisədə dəfələrlə aşağıdır. Aşağı konversiyalı kanallara həddindən artıq büdcə ayrılması ümumi konversiya dərəcəsini aşağı salmışdır. Yüksək konversiyalı kanallara büdcə bərpası ümumi CR və ROAS göstericilərini yüksəldəcəkdir.
