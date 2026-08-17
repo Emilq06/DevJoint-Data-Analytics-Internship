@@ -1,0 +1,31 @@
+-- 1. İllər üzrə Ümumi Performans Metrikaları
+
+SELECT 
+    strftime('%Y', date) AS year,
+    SUM(sessions) AS total_sessions,
+    SUM(conversions) AS total_conversions,
+    ROUND(SUM(spend), 2) AS total_spend,
+    ROUND(SUM(revenue), 2) AS total_revenue,
+    ROUND((CAST(SUM(conversions) AS FLOAT) / SUM(sessions)) * 100, 2) AS conversion_rate_pct,
+    ROUND(CAST(SUM(revenue) AS FLOAT) / SUM(spend), 2) AS roas,
+    ROUND(CAST(SUM(spend) AS FLOAT) / SUM(conversions), 2) AS cpa
+FROM marketing_events
+GROUP BY strftime('%Y', date)
+ORDER BY year;
+
+
+-- 2. Marketinq Kanalları Üzrə Dərin Aqreqasiya (Simpson Paradoksu Analizi)
+
+SELECT 
+    strftime('%Y', date) AS year,
+    channel,
+    SUM(sessions) AS total_sessions,
+    SUM(conversions) AS total_conversions,
+    ROUND(SUM(spend), 2) AS total_spend,
+    ROUND(SUM(revenue), 2) AS total_revenue,
+    ROUND((CAST(SUM(conversions) AS FLOAT) / SUM(sessions)) * 100, 2) AS conversion_rate_pct,
+    ROUND(CAST(SUM(revenue) AS FLOAT) / SUM(spend), 2) AS roas,
+    ROUND(CAST(SUM(spend) AS FLOAT) / SUM(conversions), 2) AS cpa
+FROM marketing_events
+GROUP BY strftime('%Y', date), channel
+ORDER BY year, total_revenue DESC;
