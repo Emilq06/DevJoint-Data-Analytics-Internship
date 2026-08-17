@@ -1,0 +1,17 @@
+Checkpoint 5 — Yazılı Xülasə (Executive Summary)
+
+1. Vəziyyət (Situation):
+
+2024–2025-ci illərin marketinq datalarında ümumi Konversiya Dərəcəsinin aşağı düşməsi müşahid olunmuşdur. Bu azalmanın kanalların keyfiyyətsizləşməsindən, yoxsa başqa amillərdən qaynaqlandığını təyin etmək üçün analiz aparılmışdır.
+
+2. Tapıntılar (Findings):
+
+Fərdi Kanal Artımı: SQL və Pivot təhlili göstərir ki, hər bir fərdi kanalın (Organic Search, Email, Paid Search, Paid Social) Konversiya Dərəcəsi (CR %) və ROAS göstericisi 2025-ci ildə artmışdır.
+
+Simpson Paradoksu: Ümumi göstəricinin düşməsi Simpson Paradoksu ilə izah olunur. Əsas səbəb trafık və büdcə payının yüksek konversiyalı kanallardan (Organic, Email) daha aşağı konversiyalı ödənişli kanallara (Paid Social, Paid Search) sürüşməsidir (Mix-Shift).
+
+3. Tövsiyələr (Recommendations):
+
+Büdcə payını yüksək konversiyalı kanallara doğru yenidən balanslaşdırmaq.
+
+Marketinq qərarlarını ümumi aqreqasiya olunmuş göstəricilərə deyil, kanal səviyyəsindəki dərindən analizlərə əsaslandırmaq.
