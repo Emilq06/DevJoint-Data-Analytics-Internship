@@ -52,7 +52,7 @@ Trend analysis confirmed that every single individual channel improved its conve
 
 📈 Visualizations & Interactive Workbook (Checkpoint 4)
 Below is the visualization illustrating individual channel conversion rate improvements alongside the budget mix-shift effect:
-https://github.com/Emilq06/DevJoint-Data-Analytics-Internship
+[https://github.com/Emilq06/DevJoint-Data-Analytics-Internship](https://github.com/Emilq06/DevJoint-Data-Analytics-Internship/tree/main/Week_4_Business%20Case%20Analyze)
 
 Interactive Spreadsheet: (https://docs.google.com/spreadsheets/d/1pDR0-jF0ORLqBNJSJ3uWeX2k5HZMQ0WkWDtzPpMCR4I/edit?usp=sharing)
 
