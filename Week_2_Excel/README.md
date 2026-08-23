@@ -36,8 +36,8 @@ Sifarişləri mənfəət dəyərinə görə Profit, Loss və ya Break Even kimi 
 Yüksək Dəyərli Sifariş (High Value Order):
 
 Excel
-=IF(R2>1000, "High Value", "Standard")
-Satış məbləği 1000-dən böyük olan sifarişləri High Value kimi işarələyir.
+=IF(R2>500, "High Value", "Standard")
+Satış məbləği 500-dən böyük olan sifarişləri High Value kimi işarələyir.
 
 3. Şərti Aqreqasiya (Conditional Aggregations)
 Region üzrə Ümumi Satış:
